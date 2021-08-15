@@ -9,7 +9,8 @@ function SmartParagraph() {
 		you a complete account of the system and expound the actual
 		teachings of great explorers.`
 	);
-
+	const [counter] = useState(0);
+	const [toggler, setToggler] = useState(false);
 	return (
 		<div className="SmartParagraph">
 			<p className="SmartParagraph__explanation">
@@ -19,9 +20,17 @@ function SmartParagraph() {
 				Clicking again should show all of the text back.
 			</p>
 			<p className="SmartParagraph__value">
-				{text}
+				{
+					toggler && text.split("").map((word ,i)=>{
+						if(i < 100){
+							console.log(word, i)
+							i= i+word.length;
+							return <span>{word}</span>
+						}
+					}) || text
+				}
 			</p>
-			<button>Toggle</button>
+			<button onClick={()=>setToggler(!toggler)}>Toggle</button>
 		</div>
 	);
 }

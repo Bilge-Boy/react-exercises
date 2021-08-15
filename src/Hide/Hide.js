@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Hide.css';
 
 function Hide() {
+	const [condition, setToFalse] = useState(true);
+	
+	function onTrigger(){
+		setToFalse(false);
+	}
+
 	return (
 		<div className="Hide">
-			<button>Hide text now!</button>
+			<button onClick={onTrigger}>Hide text now!</button>
+			{condition && 
 			<p>
 				You can read this text,
 				but if you click the button it should disappear. Forever.
-			</p>
+			</p>}
 		</div>
 	);
 }

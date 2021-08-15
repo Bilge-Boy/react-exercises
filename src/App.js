@@ -8,7 +8,7 @@ import RandomNumber from './RandomNumber/RandomNumber';
 import YayValidator from './YayValidator/YayValidator';
 import Tasks from './Tasks/Tasks';
 import Users from './Users/Users';
-import Weather from './Weather/Weather';
+// import Weather from './Weather/Weather';
 import President from './President/President';
 import Remover from './Remover/Remover';
 import LastClick from './LastClick/LastClick';
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
         <div className="exercise" data-number="1" data-title="<Blob />">
-            <Blob />
+            <Blob showLogo={true} />
         </div>
         <div className="exercise" data-number="2" data-title="<Hide />">
             <Hide />
@@ -47,7 +47,7 @@ function App() {
             <LastClick />
         </div>
         <div className="exercise" data-number="10" data-title="<Weather />">
-            <Weather />
+            {/* <Weather /> */}
         </div>
         <div className="exercise" data-number="11" data-title="<President />">
             <President />

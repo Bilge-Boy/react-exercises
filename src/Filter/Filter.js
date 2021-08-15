@@ -11,13 +11,24 @@ function Filter() {
 		'Medium dog'
 	]);
 
+	const [searchbox, setSearchbox] = useState('');
+	
+	function whileTyping(event){
+		setSearchbox(event.target.value);
+	}
+
 	return (
 		<div className="Filter">
 			<p>Filter the list as you type.</p>
-			<input placeholder="Search..." className="Filter__textbox" />
+			<input placeholder="Search..." className="Filter__textbox" onChange={whileTyping} />
 			<ul>
 				{items.map((item, index) => {
-					return <li key={index}>{item}</li>;
+					if(item.trim().length)
+						if(item.toLowerCase().includes(searchbox.toLowerCase()))
+							return <li key={index}>{item}</li>;
+					
+
+					
 				})}
 			</ul>
 		</div>
